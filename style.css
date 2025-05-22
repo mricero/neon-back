@@ -1,0 +1,115 @@
+/* Global box-sizing for consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* GENERAL STYLES */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* APP CONTAINER */
+#app {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* NEON CURSOR CANVAS */
+#app canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}
+
+/* HEADER STYLES */
+#main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Hide header on scroll down */
+#main-header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Navigation inside header */
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-bar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
+}
+
+.nav-bar ul li a:hover,
+.nav-bar ul li a:focus {
+  color: #39ff14;
+  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+  outline: none;
+}
+
+/* CONTENT STYLING */
+#content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 100px auto 60px; /* top margin for header space */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Heading */
+#content h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+#content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 100%;
+}
